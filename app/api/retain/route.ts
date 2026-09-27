@@ -3,6 +3,8 @@ import { retainCampaignMemory } from '@/lib/hindsight';
 import { supabase } from '@/lib/supabase';
 import { MarketingExperiment } from '@/types/experiment';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
   try {
     const experiment: MarketingExperiment = await request.json();

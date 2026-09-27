@@ -3,9 +3,11 @@ import OpenAI from 'openai';
 import { recallBrandMemory } from '@/lib/hindsight';
 import { EvaluationResponse, MarketingExperiment } from '@/types/experiment';
 
+export const dynamic = 'force-dynamic';
+
 const groq = new OpenAI({
   baseURL: 'https://api.groq.com/openai/v1',
-  apiKey: process.env.GROQ_API_KEY || '',
+  apiKey: process.env.GROQ_API_KEY || 'dummy_build_key',
 });
 
 const SYSTEM_PROMPT = `You are BrandMind, a Marketing Experiment Synthesis Agent. Evaluate the user's strategy strictly against recalled brand experiment history across 3 levels: Raw Experience, Learning, and Strategic Directive.
