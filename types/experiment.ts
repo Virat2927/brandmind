@@ -1,5 +1,6 @@
 export interface MarketingExperiment {
   id?: string;
+  user_id?: string;
   objective: string;
   hypothesis: string;
   audience: string;
